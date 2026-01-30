@@ -2,6 +2,7 @@ function Book(title, author, pages, read) {
     if(!new.target){
         throw Error("You must use the 'new' operator to call the constructor")
     }
+    this.id = crypto.randomUUID()
     this.title = title
     this.author = author
     this.pages = pages
@@ -11,4 +12,6 @@ function Book(title, author, pages, read) {
     }
 }
 
+const theHobbit = new Book("The Hobbit", "J.R.R Tolkien", 295, false)
 
+console.log(theHobbit)
