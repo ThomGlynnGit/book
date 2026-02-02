@@ -20,6 +20,27 @@ function addBookToLibrary(title, author, pages, read){
 }
 
 let myLibrary = []
+const docBod = document.querySelector("div")
+
+function bookDisplay (bookList) {
+    bookList.forEach((elem) => {
+        console.log(elem)
+        let bookCard = document.createElement("div")
+        let title = document.createElement("h4")
+        let info = document.createElement("p")
+
+        bookCard.appendChild(title)
+        bookCard.appendChild(info)
+
+        title.textContent = elem.title
+        info.textContent = elem.info()
+
+        docBod.append(bookCard)
+        
+    })
+}
+
+
 
 //Test objects
 /*
@@ -28,5 +49,5 @@ const theLotr = new Book("The Lord of the Rings", "J.R.R Tolkien", 450, true)
 */
 addBookToLibrary("The Hobbit", "J.R.R Tolkien", 295, false)
 addBookToLibrary("The Lord of the Rings", "J.R.R Tolkien", 450, true)
-console.log(myLibrary[1])
+bookDisplay(myLibrary)
 
