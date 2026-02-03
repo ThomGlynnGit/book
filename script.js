@@ -1,3 +1,7 @@
+let myLibrary = []
+const docBod = document.getElementById("card-container")
+const addBtn = document.getElementById("add")
+
 //book constructor
 function Book(title, author, pages, read) {
     if(!new.target){
@@ -19,8 +23,6 @@ function addBookToLibrary(title, author, pages, read){
     myLibrary.push(tempBook)
 }
 
-let myLibrary = []
-const docBod = document.getElementById("card-container")
 
 function bookDisplay (bookList) {
     bookList.forEach((elem) => {
@@ -39,6 +41,12 @@ function bookDisplay (bookList) {
         
     })
 }
+
+addBtn.addEventListener("click", (event) => {
+    
+})
+
+
 
 
 
