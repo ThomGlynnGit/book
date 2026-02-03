@@ -1,7 +1,16 @@
 let myLibrary = []
 const docBod = document.getElementById("card-container")
 const addBtn = document.getElementById("add")
+
+//dialog elements
 const bookDialog = document.getElementById("book-dialog")
+const submitBtn = document.getElementById("submit-btn")
+
+//form inputs
+const titleInput = document.getElementById("title")
+const authorInput = document.getElementById("author")
+const pagesInput = document.getElementById("pages")
+const readInput = document.getElementById("read")
 
 //book constructor
 function Book(title, author, pages, read) {
@@ -24,7 +33,7 @@ function addBookToLibrary(title, author, pages, read){
     myLibrary.push(tempBook)
 }
 
-
+//display books on page
 function bookDisplay (bookList) {
     bookList.forEach((elem) => {
         console.log(elem)
@@ -43,10 +52,16 @@ function bookDisplay (bookList) {
     })
 }
 
+//display new book form on button click
 addBtn.addEventListener("click", (event) => {
     bookDialog.showModal()
 })
 
+submitBtn.addEventListener("click", (event) => {
+    event.preventDefault()
+
+    
+})
 
 
 
