@@ -11,7 +11,7 @@
     <div class="container">
         <div id="card-container"></div>
         <button type="button" id="add">Add a book</button>
-        <dialog>
+        <dialog id="book-dialog">
             <form>
                 <div class="form-row">
                     <label for="title">Title</label>
@@ -36,8 +36,7 @@
                         name="not-read" 
                         type="radio" 
                         value="not-read" />
-                    <label for="not-read" class="radio-label">Not read</label>
-                    
+                    <label for="not-read" class="radio-label">Not read</label> 
                 </div>
                 <button value="cancel" formmethod="dialog">Cancel</button>
                 <button value="default" id="submit-btn">Submit</button>

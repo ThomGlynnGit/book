@@ -1,6 +1,7 @@
 let myLibrary = []
 const docBod = document.getElementById("card-container")
 const addBtn = document.getElementById("add")
+const bookDialog = document.getElementById("book-dialog")
 
 //book constructor
 function Book(title, author, pages, read) {
@@ -43,7 +44,7 @@ function bookDisplay (bookList) {
 }
 
 addBtn.addEventListener("click", (event) => {
-    
+    bookDialog.showModal()
 })
 
 
