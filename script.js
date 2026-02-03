@@ -57,10 +57,24 @@ addBtn.addEventListener("click", (event) => {
     bookDialog.showModal()
 })
 
+//actions to add new book to list
 submitBtn.addEventListener("click", (event) => {
+
+    //prevent form submission
     event.preventDefault()
 
+    //add new book to library array
+    addBookToLibrary(titleInput.value, authorInput.value, pagesInput.value, readInput.value)
     
+    //remove all books from display
+    while(docBod.firstChild) {
+        docBod.removeChild(docBod.firstChild)
+    }
+
+    //update display with new books
+    bookDisplay(myLibrary)
+
+    bookDialog.close()
 })
 
 
