@@ -41,6 +41,8 @@ function bookDisplay (bookList) {
         let title = document.createElement("h4")
         let info = document.createElement("p")
 
+        bookCard.setAttribute("data-index", elem.id)
+
         bookCard.appendChild(title)
         bookCard.appendChild(info)
 
