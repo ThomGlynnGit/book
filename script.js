@@ -40,11 +40,16 @@ function bookDisplay (bookList) {
         let bookCard = document.createElement("div")
         let title = document.createElement("h4")
         let info = document.createElement("p")
+        let deleteBtn = document.createElement("button")
+
+        deleteBtn.setAttribute("type", "button")
+        deleteBtn.textContent = "Remove from library"
 
         bookCard.setAttribute("data-index", elem.id)
 
         bookCard.appendChild(title)
         bookCard.appendChild(info)
+        bookCard.appendChild(deleteBtn)
 
         title.textContent = elem.title
         info.textContent = elem.info()
