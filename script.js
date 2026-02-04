@@ -47,6 +47,11 @@ function bookDisplay (bookList) {
 
         bookCard.setAttribute("data-index", elem.id)
 
+        deleteBtn.addEventListener("click", (event) => {
+            bookCard.remove()
+            bookList.splice(elem, 1)
+        })
+
         bookCard.appendChild(title)
         bookCard.appendChild(info)
         bookCard.appendChild(deleteBtn)
@@ -83,6 +88,8 @@ submitBtn.addEventListener("click", (event) => {
 
     bookDialog.close()
 })
+
+
 
 
 
