@@ -36,25 +36,47 @@ function addBookToLibrary(title, author, pages, read){
 //display books on page
 function bookDisplay (bookList) {
     bookList.forEach((elem) => {
-        console.log(elem)
         let bookCard = document.createElement("div")
         let title = document.createElement("h4")
         let info = document.createElement("p")
         let deleteBtn = document.createElement("button")
-
-        deleteBtn.setAttribute("type", "button")
-        deleteBtn.textContent = "Remove from library"
+        let readBtn = document.createElement("button")
 
         bookCard.setAttribute("data-index", elem.id)
 
+        //add button to remove book from display
+        deleteBtn.setAttribute("type", "button")
+        deleteBtn.textContent = "Remove from library"
         deleteBtn.addEventListener("click", (event) => {
             bookCard.remove()
             bookList.splice(elem, 1)
         })
 
+        //add button to change read status
+        readBtn.setAttribute("type", "button")
+        if( elem.read == true ){
+            readBtn.textContent = "Change to unread"
+        }
+        else if (elem.read == false){
+            readBtn.textContent = "Change to read"
+        }
+        readBtn.addEventListener("click", (event) => {
+            if( elem.read == true ){
+                elem.read = false
+                info.textContent = elem.info()
+                readBtn.textContent = "Change to read"
+            }
+            else if (elem.read == false){
+                elem.read = true
+                info.textContent = elem.info()
+                readBtn.textContent = "Change to unread"
+            }
+        })
+
         bookCard.appendChild(title)
         bookCard.appendChild(info)
         bookCard.appendChild(deleteBtn)
+        bookCard.appendChild(readBtn)
 
         title.textContent = elem.title
         info.textContent = elem.info()
