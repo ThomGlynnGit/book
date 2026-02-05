@@ -1,0 +1,13 @@
+.container {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100vh;
+}
+
+#card-container {
+    display: grid;
+    margin: 0;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    gap: 1rem;
+    margin: 20px;
+}
