@@ -22,9 +22,11 @@ function Book(title, author, pages, read) {
     this.author = author
     this.pages = pages
     this.read = read
-    this.info = function(){
-        return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read ? "read" : "not read yet" }`
-    }
+}
+
+//info method added to prototype to reduce memory usage
+Book.prototype.info = function() {
+    return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read ? "read" : "not read yet" }`
 }
 
 function addBookToLibrary(title, author, pages, read){
@@ -117,11 +119,6 @@ submitBtn.addEventListener("click", (event) => {
 
     bookDialog.close()
 })
-
-
-
-
-
 
 //Test objects
 /*
