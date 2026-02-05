@@ -1,7 +1,16 @@
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body{
+    box-sizing: border-box;
+    margin: 0;
+}
 .container {
     box-sizing: border-box;
     width: 100%;
     min-height: 100vh;
+    background-color: rgb(57, 59, 61);
 }
 
 #card-container {
@@ -10,4 +19,16 @@
     grid-template: 1fr 1fr / 1fr 1fr;
     gap: 1rem;
     margin: 20px;
+    margin-top: 0;
+}
+
+.book-card {
+    background-color: rgb(100, 149, 227);
+    border-radius: 10px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    height: min-content;
+    box-shadow: 1px 1px 3px rgb(175, 175, 175);
+    height: 100%;
 }

@@ -44,6 +44,8 @@ function bookDisplay (bookList) {
         let deleteBtn = document.createElement("button")
         let readBtn = document.createElement("button")
 
+        bookCard.className = "book-card"
+
         //add button to remove book from display
         deleteBtn.setAttribute("type", "button")
         deleteBtn.textContent = "Remove from library"
