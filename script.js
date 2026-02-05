@@ -130,5 +130,7 @@ const theLotr = new Book("The Lord of the Rings", "J.R.R Tolkien", 450, true)
 */
 addBookToLibrary("The Hobbit", "J.R.R Tolkien", 295, false)
 addBookToLibrary("The Lord of the Rings", "J.R.R Tolkien", 450, true)
+addBookToLibrary("Ship of destiny", "Robin Hobb", 901, false)
+addBookToLibrary("Assassin's apprentice", "Robin Hobb", 450, true)
 bookDisplay(myLibrary)
 
