@@ -49,7 +49,7 @@
 
 .card-text > h4 {
     font-size: 20px;
-    color: #e1b060;
+    color: #fac879;
 }
 
 .card-text > p {
@@ -89,3 +89,41 @@ button{
 button:hover {
     filter: contrast(120%);
 }
+
+.dialog-container {
+    min-height: 100vh;
+    width: 100%;
+}
+
+dialog {
+    position: fixed;
+    top: 50%;
+    left: 35%;
+    background-color: rgb(100, 149, 227);
+    border-color: azure;
+    border-width: 2px;
+    border-radius: 5px;
+}
+
+.form-row {
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.form-row input[type='text'],
+.form-row input[type='number'] {
+  background-color: #FFFFFF;
+  border: 1px solid #D6D9DC;
+  border-radius: 3px;
+  width: 100%;
+  padding: 7px;
+  font-size: 14px;
+}
+
+.radio-row {
+    margin-top: 3px;
+}
+

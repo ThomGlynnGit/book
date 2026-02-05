@@ -13,39 +13,45 @@
             <h1>Personal library</h1>
         </div>
         <div id="card-container"></div>
-        <button type="button" id="add">Add a book</button>
+        <button type="button" id="add">Add a book</button>    
+    </div>
+    <div class="dialog-container">
         <dialog id="book-dialog">
-            <form>
-                <div class="form-row">
-                    <label for="title">Title</label>
-                    <input id="title" name="title" type="text">
-                </div>
-                <div class="form-row">
-                    <label for="author">Author</label>
-                    <input id="author" name="author" type="text">
-                </div>
-                <div class="form-row">
-                    <label for="pages">Pages</label>
-                    <input id="pages" name="pages" type="number">
-                </div>
-                <div class="form-row">
-                    <legend>Have you read the book?</legend>
-                    <input id="read" 
-                        name="read" 
-                        type="radio" 
-                        value="true" />
-                    <label for="read" class="radio-label">Read</label>
-                    <input id="read" 
-                        name="read" 
-                        type="radio" 
-                        value="false" />
-                    <label for="not-read" class="radio-label">Not read</label> 
-                </div>
-                <button value="cancel" formmethod="dialog">Cancel</button>
-                <button value="default" id="submit-btn">Submit</button>
-            </form>
-            
-        </dialog>
+                <form>
+                    <div class="form-row">
+                        <label for="title">Title</label>
+                        <input id="title" name="title" type="text">
+                    </div>
+                    <div class="form-row">
+                        <label for="author">Author</label>
+                        <input id="author" name="author" type="text">
+                    </div>
+                    <div class="form-row">
+                        <label for="pages">Pages</label>
+                        <input id="pages" name="pages" type="number">
+                    </div>
+                    <div class="form-row">
+                        <legend>Have you read the book?</legend>
+                        <div class="radio-row">
+                            <input id="read"
+                                name="read"
+                                type="radio"
+                                value="true" />
+                            <label for="read" class="radio-label">Read</label>
+                        </div>
+                        <div class="radio-row">
+                            <input id="read"
+                                name="read"
+                                type="radio"
+                                value="false" />
+                            <label for="not-read" class="radio-label">Not read</label>
+                        </div>
+                    </div>
+                    <button value="cancel" formmethod="dialog">Cancel</button>
+                    <button value="default" id="submit-btn">Submit</button>
+                </form>
+        
+            </dialog>
     </div>
     
 </body>
