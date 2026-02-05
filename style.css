@@ -30,10 +30,20 @@
 .book-card {
     background-color: rgb(100, 149, 227);
     border-radius: 10px;
-    padding: 5px;
+    padding: 10px;
     display: flex;
-    flex-direction: column;
     height: min-content;
     box-shadow: 1px 1px 3px rgb(23, 23, 23);
     height: 8rem;
+}
+
+.card-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around
+}
+
+.card-btns {
+    display: flex;
+    align-items: center;
 }
