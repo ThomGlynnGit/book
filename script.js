@@ -23,7 +23,7 @@ function Book(title, author, pages, read) {
     this.pages = pages
     this.read = read
     this.info = function(){
-        return `${title} by ${author}, ${pages} pages, ${read ? "read" : "not read yet" }`
+        return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read ? "read" : "not read yet" }`
     }
 }
 
@@ -42,14 +42,15 @@ function bookDisplay (bookList) {
         let deleteBtn = document.createElement("button")
         let readBtn = document.createElement("button")
 
-        bookCard.setAttribute("data-index", elem.id)
-
         //add button to remove book from display
         deleteBtn.setAttribute("type", "button")
         deleteBtn.textContent = "Remove from library"
         deleteBtn.addEventListener("click", (event) => {
+            const index = bookList.findIndex(book => book.id === elem.id)
             bookCard.remove()
-            bookList.splice(elem, 1)
+            if(index !== -1){
+                bookList.splice(index, 1)
+            }
         })
 
         //add button to change read status
@@ -70,6 +71,9 @@ function bookDisplay (bookList) {
                 elem.read = true
                 info.textContent = elem.info()
                 readBtn.textContent = "Change to unread"
+            }
+            else {
+                console.log("error")
             }
         })
 
@@ -97,8 +101,11 @@ submitBtn.addEventListener("click", (event) => {
     //prevent form submission
     event.preventDefault()
 
+    //convert button string value to boolean
+    const readValue = document.querySelector('input[name="read"]:checked').value === "true"
+
     //add new book to library array
-    addBookToLibrary(titleInput.value, authorInput.value, pagesInput.value, readInput.value)
+    addBookToLibrary(titleInput.value, authorInput.value, pagesInput.value, readValue)
     
     //remove all books from display
     while(docBod.firstChild) {
