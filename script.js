@@ -65,20 +65,24 @@ function bookDisplay (bookList) {
         readBtn.setAttribute("type", "button")
         if( elem.read == true ){
             readBtn.textContent = "unread"
+            readBtn.className = "unread"
         }
         else if (elem.read == false){
             readBtn.textContent = "read"
+            readBtn.className = "read"
         }
         readBtn.addEventListener("click", (event) => {
             if( elem.read == true ){
                 elem.read = false
                 info.textContent = elem.info()
                 readBtn.textContent = "read"
+                readBtn.className = "read"
             }
             else if (elem.read == false){
                 elem.read = true
                 info.textContent = elem.info()
                 readBtn.textContent = "unread"
+                readBtn.className = "unread"
             }
             else {
                 console.log("error")
