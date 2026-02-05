@@ -52,7 +52,7 @@ function bookDisplay (bookList) {
 
         //add button to remove book from display
         deleteBtn.setAttribute("type", "button")
-        deleteBtn.textContent = "Remove from library"
+        deleteBtn.textContent = "Remove"
         deleteBtn.addEventListener("click", (event) => {
             const index = bookList.findIndex(book => book.id === elem.id)
             bookCard.remove()
@@ -64,21 +64,21 @@ function bookDisplay (bookList) {
         //add button to change read status
         readBtn.setAttribute("type", "button")
         if( elem.read == true ){
-            readBtn.textContent = "Change to unread"
+            readBtn.textContent = "unread"
         }
         else if (elem.read == false){
-            readBtn.textContent = "Change to read"
+            readBtn.textContent = "read"
         }
         readBtn.addEventListener("click", (event) => {
             if( elem.read == true ){
                 elem.read = false
                 info.textContent = elem.info()
-                readBtn.textContent = "Change to read"
+                readBtn.textContent = "read"
             }
             else if (elem.read == false){
                 elem.read = true
                 info.textContent = elem.info()
-                readBtn.textContent = "Change to unread"
+                readBtn.textContent = "unread"
             }
             else {
                 console.log("error")
