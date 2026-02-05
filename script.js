@@ -39,12 +39,16 @@ function addBookToLibrary(title, author, pages, read){
 function bookDisplay (bookList) {
     bookList.forEach((elem) => {
         let bookCard = document.createElement("div")
+        let cardText = document.createElement("div")
+        let cardBtns = document.createElement("div")
         let title = document.createElement("h4")
         let info = document.createElement("p")
         let deleteBtn = document.createElement("button")
         let readBtn = document.createElement("button")
 
         bookCard.className = "book-card"
+        cardText.className = "card-text"
+        cardBtns.className = "card-btns"
 
         //add button to remove book from display
         deleteBtn.setAttribute("type", "button")
@@ -81,10 +85,13 @@ function bookDisplay (bookList) {
             }
         })
 
-        bookCard.appendChild(title)
-        bookCard.appendChild(info)
-        bookCard.appendChild(deleteBtn)
-        bookCard.appendChild(readBtn)
+        cardText.appendChild(title)
+        cardText.appendChild(info)
+        cardBtns.appendChild(deleteBtn)
+        cardBtns.appendChild(readBtn)
+
+        bookCard.appendChild(cardText)
+        bookCard.appendChild(cardBtns)
 
         title.textContent = elem.title
         info.textContent = elem.info()
