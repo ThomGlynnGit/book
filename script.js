@@ -13,21 +13,26 @@ const pagesInput = document.getElementById("pages")
 const readInput = document.getElementById("read")
 
 //book constructor
-function Book(title, author, pages, read) {
-    if(!new.target){
-        throw Error("You must use the 'new' operator to call the constructor")
+class Book {
+    constructor(title, author, pages, read) {
+        if(!new.target){
+            throw Error("You must use the 'new' operator to call the constructor")
+        }
+        this.id = crypto.randomUUID()
+        this.title = title
+        this.author = author
+        this.pages = pages
+        this.read = read
     }
-    this.id = crypto.randomUUID()
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.read = read
+
+    //info method added to prototype to reduce memory usage
+    info() {
+        return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read ? "read" : "not read yet" }`
+    }
+
 }
 
-//info method added to prototype to reduce memory usage
-Book.prototype.info = function() {
-    return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read ? "read" : "not read yet" }`
-}
+
 
 function addBookToLibrary(title, author, pages, read){
     let tempBook = new Book(title, author, pages, read)
